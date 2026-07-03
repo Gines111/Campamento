@@ -16,15 +16,6 @@
   .particula:nth-child(5){ left:72%; animation-delay:1.3s; font-size:1.3rem; }
   .particula:nth-child(6){ left:88%; animation-delay:2s;   font-size:1rem; }
   .particula:nth-child(7){ left:50%; animation-delay:3.4s; font-size:1.2rem; }
-
-  .timon{
-    position:relative;
-    z-index:1;
-    display:inline-block;
-    margin-bottom:6px;
-    font-size:1.1rem;
-    animation:girarSuave 8s linear infinite;
-  }
 </style>
 </head>
 <body>
@@ -40,16 +31,39 @@
     <span class="particula">🌊</span>
   </div>
 
-  <div class="medalla">⛵</div>
-  <p class="eyebrow">Proyecto Oberti · Verano 2026</p>
-  <h1 class="display">Gracias, Adri</h1>
+  <span class="washi izq"></span>
+  <span class="washi der"></span>
 
-  <p class="mensaje">Eres el número uno. El incansable, el que rema sin parar, el que sostiene el barco cuando más falta hace. El capitán de esta familia que es el Oberti.</p>
-  <p class="mensaje">Nos faltan palabras para decirte todo el cariño, el agrado y la fascinación que nos generas. Lo tuyo es esto, y lo demuestras y lo vives en cada cosa que haces, en cada pensamiento, con ese encanto y esa alegría pensando siempre en cada niño. No por quedar bien, sino porque te sale así de servicial y bueno.</p>
-  <p class="mensaje">Hablando en nombre de todo el equipo: eres lo mejor que le podía pasar a este proyecto, y lo mejor para darnos la fuerza que a veces nos ha faltado. Eres el motor del campamento. Hace falta más gente que ayude a mover las ideas, pero sin ti esto no funciona.</p>
+  <p class="pista-deslizar" id="pistaDeslizar"><span class="icono">👉</span> toca o desliza para leer</p>
+  <div class="progreso" id="progreso"></div>
 
-  <p class="firma display">Con cariño, Ginés</p>
-  <a class="volver" href="../index.html">&larr; volver al pase de voluntario</a>
+  <div class="carrusel-viewport">
+    <div class="carrusel">
+      <div class="slide">
+        <div class="medalla">⛵</div>
+        <p class="eyebrow">Proyecto Oberti · Campamento 2026</p>
+        <h1 class="display">Gracias, Adri</h1>
+      </div>
+      <div class="slide">
+        <p class="mensaje">Eres el número uno. El incansable, el que rema sin parar, el que sostiene el barco cuando más falta hace. El capitán de esta familia que es Oberti.</p>
+      </div>
+      <div class="slide">
+        <p class="mensaje">Me faltan palabras para decirte todo el cariño, el agrado y la fascinación que nos generas. Lo tuyo es esto, y lo demuestras y lo vives en cada cosa que haces, en cada pensamiento, con ese encanto y esa alegría pensando siempre en cada niño. No por quedar bien, sino porque te sale así de servicial y bueno.</p>
+      </div>
+      <div class="slide">
+        <p class="mensaje">Hablando en nombre de todo el equipo: eres lo mejor que le podía pasar a este proyecto, y lo mejor para darnos la fuerza que a veces nos ha faltado. Eres el motor del campamento. Hace falta más gente que ayude a mover las ideas, pero sin ti esto no funciona.</p>
+      </div>
+      <div class="slide">
+        <p class="firma display">Con cariño, Ginés</p>
+        <a class="volver" href="../index.html">&larr; volver al pase de voluntario</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-botones">
+    <button type="button" class="nav-btn nav-prev" data-oculto="1" aria-label="Anterior">&lsaquo;</button>
+    <button type="button" class="nav-btn nav-next" aria-label="Siguiente">&rsaquo;</button>
+  </div>
 </div>
 
 <div class="olas" aria-hidden="true">
@@ -59,5 +73,6 @@
   </svg>
 </div>
 
+<script src="persona.js"></script>
 </body>
 </html>

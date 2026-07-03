@@ -1,0 +1,212 @@
+body{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:100vh;
+  padding:20px 14px;
+}
+
+.diploma{
+  position:relative;
+  z-index:1;
+  width:100%;
+  max-width:480px;
+  background:var(--paper);
+  border-radius:22px;
+  padding:26px 0 20px;
+  box-shadow:0 30px 60px -24px rgba(10,74,84,.4);
+  text-align:center;
+  overflow:hidden;
+  animation:apareceArriba .7s ease both;
+  user-select:none;
+  touch-action:pan-y;
+  cursor:pointer;
+}
+
+@media (min-width:600px){
+  .diploma{ max-width:620px; padding:34px 0 26px; border-radius:26px; }
+}
+
+.diploma::before{
+  content:"";
+  position:absolute;
+  inset:10px;
+  border:2px dashed rgba(14,110,124,.25);
+  border-radius:16px;
+  pointer-events:none;
+  z-index:1;
+}
+
+/* washi tape decorativo, como si fuera un cuaderno de recuerdos */
+.washi{
+  position:absolute;
+  top:-9px;
+  width:74px;
+  height:26px;
+  background:repeating-linear-gradient(45deg, var(--sun), var(--sun) 6px, #ffe08a 6px, #ffe08a 12px);
+  opacity:.85;
+  box-shadow:0 3px 6px rgba(0,0,0,.12);
+  z-index:2;
+}
+.washi.izq{ left:14px; transform:rotate(-8deg); }
+.washi.der{ right:14px; transform:rotate(7deg); background:repeating-linear-gradient(45deg, var(--coral), var(--coral) 6px, #ffb3a6 6px, #ffb3a6 12px); }
+
+/* pista de "toca o desliza" */
+.pista-deslizar{
+  position:relative;
+  z-index:1;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  margin:2px auto 10px;
+  padding:5px 12px;
+  background:rgba(14,110,124,.08);
+  color:var(--pool-deep);
+  border-radius:999px;
+  font-size:.72rem;
+  font-weight:600;
+  transition:opacity .5s ease, transform .5s ease;
+}
+.pista-deslizar .icono{ animation:deslizaIcono 1.6s ease-in-out infinite; }
+.pista-deslizar.oculto{ opacity:0; transform:translateY(-6px) scale(.9); pointer-events:none; }
+
+@keyframes deslizaIcono{
+  0%,100%{ transform:translateX(0); }
+  50%{ transform:translateX(5px); }
+}
+
+/* progreso (puntitos) */
+.progreso{
+  position:relative;
+  z-index:1;
+  display:flex;
+  justify-content:center;
+  gap:6px;
+  margin-bottom:14px;
+}
+.punto{
+  width:6px; height:6px;
+  border-radius:50%;
+  background:rgba(14,110,124,.22);
+  transition:background .3s ease, transform .3s ease;
+}
+.punto.activo{ background:var(--pool-deep); transform:scale(1.4); }
+
+/* carrusel */
+.carrusel-viewport{
+  position:relative;
+  z-index:1;
+  overflow:hidden;
+  width:100%;
+}
+.carrusel{
+  display:flex;
+  transition:transform .5s cubic-bezier(.22,1,.36,.98);
+}
+.slide{
+  flex:0 0 100%;
+  max-width:100%;
+  padding:2px 26px 6px;
+  min-height:200px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  box-sizing:border-box;
+}
+
+@media (min-width:600px){
+  .slide{ padding:2px 40px 6px; min-height:230px; }
+}
+
+.medalla{
+  width:56px; height:56px;
+  margin:0 auto 14px;
+  border-radius:50%;
+  background:var(--sun);
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.5rem;
+  animation:pulso 2.6s ease-in-out infinite, brilloSuave 2.6s ease-in-out infinite;
+}
+
+.eyebrow{
+  font-size:.72rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--pool-deep);
+  font-weight:600;
+  margin:0 0 6px;
+}
+
+h1{
+  font-family:'Baloo 2', sans-serif;
+  font-weight:800;
+  font-size:clamp(1.6rem, 8vw, 2.7rem);
+  color:var(--pool-deep);
+  margin:0 0 4px;
+  line-height:1.08;
+}
+
+.slide-hint{
+  font-size:.78rem;
+  color:#6b8388;
+  margin-top:10px;
+}
+
+.mensaje{
+  font-size:1.02rem;
+  line-height:1.65;
+  color:#2c464c;
+  text-align:left;
+  margin:0;
+}
+
+.firma{
+  margin-top:6px;
+  font-family:'Baloo 2', sans-serif;
+  font-weight:700;
+  color:var(--coral);
+  font-size:1.15rem;
+}
+
+.volver{
+  display:inline-block;
+  margin-top:18px;
+  font-size:.85rem;
+  color:var(--pool);
+  text-decoration:none;
+  border-bottom:1px dashed var(--pool);
+  cursor:pointer;
+}
+.volver:hover{ color:var(--pool-deep); }
+
+/* botones de navegación */
+.nav-botones{
+  position:relative;
+  z-index:1;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 20px;
+  margin-top:6px;
+}
+.nav-btn{
+  width:36px; height:36px;
+  border-radius:50%;
+  border:2px solid var(--pool);
+  background:#fff;
+  color:var(--pool-deep);
+  font-family:'Baloo 2', sans-serif;
+  font-size:1.1rem;
+  font-weight:700;
+  display:flex; align-items:center; justify-content:center;
+  cursor:pointer;
+  transition:background .2s ease, transform .15s ease, opacity .2s ease;
+}
+.nav-btn:hover{ background:var(--pool); color:#fff; }
+.nav-btn:active{ transform:scale(.92); }
+.nav-btn[data-oculto="1"]{ opacity:0; pointer-events:none; }
+
+@media (min-width:600px){
+  .medalla{ width:64px; height:64px; font-size:1.7rem; margin-bottom:18px; }
+  .mensaje{ font-size:1.1rem; }
+}

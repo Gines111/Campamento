@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Manuel · Oberti</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="persona.css">
+<style>
+  @keyframes reverencia{
+    0%,100%{ transform:rotate(0deg) translateY(0); }
+    30%{ transform:rotate(-10deg) translateY(-2px); }
+    60%{ transform:rotate(8deg) translateY(-4px); }
+  }
+  .medalla{ animation:reverencia 2.2s ease-in-out infinite; }
+  .particula{ animation-duration:5.8s; }
+  .particula:nth-child(1){ left:8%;  animation-delay:0s;   font-size:1.2rem; }
+  .particula:nth-child(2){ left:22%; animation-delay:1.5s; font-size:1rem; }
+  .particula:nth-child(3){ left:38%; animation-delay:.7s;  font-size:1.4rem; }
+  .particula:nth-child(4){ left:54%; animation-delay:2.3s; font-size:1.1rem; }
+  .particula:nth-child(5){ left:70%; animation-delay:1s;   font-size:1.3rem; }
+  .particula:nth-child(6){ left:85%; animation-delay:1.9s; font-size:1rem; }
+  .particula:nth-child(7){ left:46%; animation-delay:2.9s; font-size:1.2rem; }
+</style>
+</head>
+<body>
+
+<div class="diploma">
+  <div class="particulas" aria-hidden="true">
+    <span class="particula">🎤</span>
+    <span class="particula">⭐</span>
+    <span class="particula">⚽</span>
+    <span class="particula">😂</span>
+    <span class="particula">🎤</span>
+    <span class="particula">⭐</span>
+    <span class="particula">😂</span>
+  </div>
+
+  <span class="washi izq"></span>
+  <span class="washi der"></span>
+
+  <p class="pista-deslizar" id="pistaDeslizar"><span class="icono">👉</span> toca o desliza para leer</p>
+  <div class="progreso" id="progreso"></div>
+
+  <div class="carrusel-viewport">
+    <div class="carrusel">
+      <div class="slide">
+        <div class="medalla">🎤</div>
+        <p class="eyebrow">Oberti · Campamento 2026</p>
+        <h1 class="display">Gracias, Manuel</h1>
+      </div>
+      <div class="slide">
+        <p class="mensaje">Profesor nuevo, monitor de campamento en los últimos instantes, y apareciste como quien dice: aparición estelar, cual jefe de eventos. Muchísimas gracias por el campamento que nos has dado.</p>
+      </div>
+      <div class="slide">
+        <p class="mensaje">Estoy totalmente agradecido y contento de que hayas podido venir, porque los momentos, los chistes, las bromas, los ahogamientos y demás han sido para el recuerdo.</p>
+      </div>
+      <div class="slide">
+        <p class="mensaje">Se nota que esto de los campamentos lo tienes más trillado que Oyarzábal marcando goles ⚽. Hay muchos preanimadores por ahí aprendiendo del mejor.</p>
+      </div>
+      <div class="slide">
+        <p class="mensaje">Sigue con esto, que entre el profesor y esto, es lo tuyo seguro.</p>
+      </div>
+      <div class="slide">
+        <p class="firma display">Con cariño, Ginés</p>
+        <a class="volver" href="../index.html">&larr; volver al pase de voluntario</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-botones">
+    <button type="button" class="nav-btn nav-prev" data-oculto="1" aria-label="Anterior">&lsaquo;</button>
+    <button type="button" class="nav-btn nav-next" aria-label="Siguiente">&rsaquo;</button>
+  </div>
+</div>
+
+<div class="olas" aria-hidden="true">
+  <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+    <path d="M0,40 C150,90 350,0 600,40 C850,80 1050,10 1200,50 L1200,120 L0,120 Z" fill="#0E6E7C" opacity="0.18"/>
+    <path d="M0,70 C200,20 400,100 650,60 C900,20 1050,90 1200,70 L1200,120 L0,120 Z" fill="#0E6E7C" opacity="0.28"/>
+  </svg>
+</div>
+
+<script src="persona.js"></script>
+</body>
+</html>

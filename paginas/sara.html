@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Sara · Oberti</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="persona.css">
+<style>
+  @keyframes aterrizaje{
+    0%,100%{ transform:translateY(0) rotate(0deg); }
+    50%{ transform:translateY(-7px) rotate(-6deg); }
+  }
+  .medalla{ animation:aterrizaje 2.4s ease-in-out infinite; }
+  .medalla.bandera-it{
+    background:linear-gradient(90deg, #009246 0 33.34%, #F4F5F0 33.34% 66.67%, #CE2B37 66.67% 100%);
+    border:2px solid rgba(16,38,46,.15);
+  }
+  .particula{ animation-duration:6s; }
+  .particula:nth-child(1){ left:8%;  animation-delay:0s;   font-size:1.2rem; }
+  .particula:nth-child(2){ left:22%; animation-delay:1.6s; font-size:1rem; }
+  .particula:nth-child(3){ left:38%; animation-delay:.8s;  font-size:1.4rem; }
+  .particula:nth-child(4){ left:54%; animation-delay:2.4s; font-size:1.1rem; }
+  .particula:nth-child(5){ left:70%; animation-delay:1.1s; font-size:1.3rem; }
+  .particula:nth-child(6){ left:85%; animation-delay:2s;   font-size:1rem; }
+  .particula:nth-child(7){ left:46%; animation-delay:3s;   font-size:1.2rem; }
+</style>
+</head>
+<body>
+
+<div class="diploma">
+  <div class="particulas" aria-hidden="true">
+    <span class="particula">🍕</span>
+    <span class="particula">✈️</span>
+    <span class="particula">❤️</span>
+    <span class="particula">😄</span>
+    <span class="particula">🍕</span>
+    <span class="particula">✈️</span>
+    <span class="particula">❤️</span>
+  </div>
+
+  <span class="washi izq"></span>
+  <span class="washi der"></span>
+
+  <p class="pista-deslizar" id="pistaDeslizar"><span class="icono">👉</span> toca o desliza para leer</p>
+  <div class="progreso" id="progreso"></div>
+
+  <div class="carrusel-viewport">
+    <div class="carrusel">
+      <div class="slide">
+        <div class="medalla bandera-it" aria-label="Italia"></div>
+        <p class="eyebrow">Oberti · Campamento 2026</p>
+        <h1 class="display">Gracias, Sara</h1>
+      </div>
+      <div class="slide">
+        <p class="mensaje">Eres una de las dos italianas maravillosas que nos han amenizado y ayudado durante todo el año.</p>
+      </div>
+      <div class="slide">
+        <p class="mensaje">Lo peor que tenéis es que solo duráis un año y luego os perdemos la pista. Ojalá, egoístamente hablando, os quedarais más tiempo.</p>
+      </div>
+      <div class="slide">
+        <p class="mensaje">Habéis aterrizado de pie en este mundo y en Oberti. Los niños y niñas te adoran: cada vez que preguntamos o nos hablan de ti, solo les salen cosas buenas que decir.</p>
+      </div>
+      <div class="slide">
+        <p class="mensaje">No has parado, no te cansas, lo has dado todo. Nos vamos a estar acordando de esto mucho tiempo, porque como tú no va a haber otra, seguro. Gracias.</p>
+      </div>
+      <div class="slide">
+        <p class="firma display">Con cariño, Ginés</p>
+        <a class="volver" href="../index.html">&larr; volver al pase de voluntario</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-botones">
+    <button type="button" class="nav-btn nav-prev" data-oculto="1" aria-label="Anterior">&lsaquo;</button>
+    <button type="button" class="nav-btn nav-next" aria-label="Siguiente">&rsaquo;</button>
+  </div>
+</div>
+
+<div class="olas" aria-hidden="true">
+  <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+    <path d="M0,40 C150,90 350,0 600,40 C850,80 1050,10 1200,50 L1200,120 L0,120 Z" fill="#0E6E7C" opacity="0.18"/>
+    <path d="M0,70 C200,20 400,100 650,60 C900,20 1050,90 1200,70 L1200,120 L0,120 Z" fill="#0E6E7C" opacity="0.28"/>
+  </svg>
+</div>
+
+<script src="persona.js"></script>
+</body>
+</html>

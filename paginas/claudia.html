@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Claudia · Oberti</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="persona.css">
+<style>
+  body{
+    background:
+      radial-gradient(circle at 20% 15%, rgba(255,201,60,.35), transparent 55%),
+      radial-gradient(circle at 85% 80%, rgba(255,107,84,.22), transparent 55%),
+      var(--sand);
+  }
+
+  @keyframes aureola{
+    0%,100%{ box-shadow:0 30px 60px -24px rgba(10,74,84,.4), 0 0 0 3px rgba(255,201,60,.4); }
+    50%{ box-shadow:0 30px 70px -20px rgba(10,74,84,.45), 0 0 0 6px rgba(255,201,60,.65); }
+  }
+  .diploma{ animation:apareceArriba .7s ease both, aureola 3.2s ease-in-out infinite; }
+
+  .medalla{
+    background:linear-gradient(135deg, var(--sun), #ffe9ad);
+    animation:pulso 2.4s ease-in-out infinite, brilloSuave 2.4s ease-in-out infinite, girarSuave 14s linear infinite;
+  }
+
+  .cinta-mejor{
+    position:absolute;
+    top:14px;
+    left:50%;
+    transform:translateX(-50%) rotate(-2deg);
+    z-index:3;
+    background:linear-gradient(90deg, var(--coral), #ff8c7a);
+    color:#fff;
+    font-family:'Baloo 2', sans-serif;
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    padding:5px 14px;
+    border-radius:999px;
+    box-shadow:0 6px 14px -6px rgba(255,107,84,.6);
+    animation:flotar 3.6s ease-in-out infinite;
+  }
+
+  .particula{ animation-duration:6.5s; }
+  .particula:nth-child(1){ left:6%;  animation-delay:0s;   font-size:1.2rem; }
+  .particula:nth-child(2){ left:18%; animation-delay:1.8s; font-size:1rem; }
+  .particula:nth-child(3){ left:32%; animation-delay:.7s;  font-size:1.4rem; }
+  .particula:nth-child(4){ left:48%; animation-delay:2.6s; font-size:1.1rem; }
+  .particula:nth-child(5){ left:62%; animation-delay:1.2s; font-size:1.3rem; }
+  .particula:nth-child(6){ left:76%; animation-delay:2.1s; font-size:1rem; }
+  .particula:nth-child(7){ left:88%; animation-delay:.3s;  font-size:1.4rem; }
+  .particula:nth-child(8){ left:40%; animation-delay:3.3s; font-size:1.1rem; }
+
+  /* comentarios "de coña" dentro de los mensajes */
+  .aparte{
+    display:inline-block;
+    font-family:'Baloo 2', sans-serif;
+    font-weight:600;
+    font-style:normal;
+    font-size:.86em;
+    color:var(--coral);
+    background:rgba(255,107,84,.1);
+    padding:1px 8px;
+    border-radius:8px;
+    transform:rotate(-1.5deg);
+    margin:0 1px;
+  }
+
+  /* confeti al llegar a la última pantalla */
+  .confeti{
+    position:absolute;
+    z-index:5;
+    pointer-events:none;
+    opacity:1;
+    transform:translate(0,0) rotate(0deg);
+    animation:estallarConfeti 1.15s ease-out forwards;
+  }
+  @keyframes estallarConfeti{
+    to{ transform:translate(var(--tx), var(--ty)) rotate(var(--r)); opacity:0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="diploma">
+  <div class="particulas" aria-hidden="true">
+    <span class="particula">✨</span>
+    <span class="particula">💫</span>
+    <span class="particula">❤️</span>
+    <span class="particula">👑</span>
+    <span class="particula">❄️</span>
+    <span class="particula">✨</span>
+    <span class="particula">💫</span>
+    <span class="particula">⭐</span>
+  </div>
+
+  <span class="cinta-mejor display">preferida oficial</span>
+  <span class="washi izq"></span>
+  <span class="washi der"></span>
+
+  <p class="pista-deslizar" id="pistaDeslizar"><span class="icono">👉</span> toca o desliza para leer</p>
+  <div class="progreso" id="progreso"></div>
+
+  <div class="carrusel-viewport">
+    <div class="carrusel">
+      <div class="slide">
+        <div class="medalla">👑</div>
+        <p class="eyebrow">Oberti · Campamento 2026</p>
+        <h1 class="display">Gracias, Claudia</h1>
+      </div>
+      <div class="slide">
+        <p class="mensaje">Literalmente me la llevaría de todos los campamentos del mundo mundial. No me despegaría de ella. Entiendo perfectamente que hayas optado por la parte social, porque estar con niños debe ser tu futuro: es excepcional la manera en la que los cuidas y todo el trabajo que haces a las espaldas de todos.</p>
+      </div>
+      <div class="slide">
+        <p class="mensaje">Pero esto es lo que le diría a alguien con menos confianza, para simplemente cumplir. A ti quiero decirte que, como persona, eres excepcional. No fallas. Atenta a todo, para todo. Nunca dices que no, haces de todo por los demás y por ti misma, y no solo dentro de las paredes del proyecto, sino también fuera de él.</p>
+      </div>
+      <div class="slide">
+        <p class="mensaje">Seguro que tienes muchísima gente alrededor que te valora tanto como yo, e incluso más, aun con lo poco que llevamos conociéndonos. Porque gracias a quedarme frozen, soy Ginés ⛄🏹. En serio, eres muy especial.</p>
+      </div>
+      <div class="slide">
+        <p class="mensaje">Me entristece que, por cosas del destino <span class="aparte">(buenas sobre todo, que significa que estudiamos y trabajamos)</span>, nos vayamos a dejar de ver <span class="aparte">(espero tener coche)</span>. Pero la verdad es que he aprovechado cada momento, y me llevo recuerdos infinitos del campamento y de ti.</p>
+      </div>
+      <div class="slide">
+        <p class="firma display">Con cariño, Ginés</p>
+        <a class="volver" href="../index.html">&larr; volver al pase de voluntario</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-botones">
+    <button type="button" class="nav-btn nav-prev" data-oculto="1" aria-label="Anterior">&lsaquo;</button>
+    <button type="button" class="nav-btn nav-next" aria-label="Siguiente">&rsaquo;</button>
+  </div>
+</div>
+
+<div class="olas" aria-hidden="true">
+  <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+    <path d="M0,40 C150,90 350,0 600,40 C850,80 1050,10 1200,50 L1200,120 L0,120 Z" fill="#0E6E7C" opacity="0.18"/>
+    <path d="M0,70 C200,20 400,100 650,60 C900,20 1050,90 1200,70 L1200,120 L0,120 Z" fill="#0E6E7C" opacity="0.28"/>
+  </svg>
+</div>
+
+<script src="persona.js"></script>
+<script>
+  (function(){
+    const contenedor = document.querySelector('.diploma');
+    const emojis = ['✨','💫','❤️','👑','⭐','❄️'];
+    let explotado = false;
+
+    function estallarConfeti(){
+      for(let i=0;i<22;i++){
+        const s = document.createElement('span');
+        s.className = 'confeti';
+        s.textContent = emojis[Math.floor(Math.random()*emojis.length)];
+        const angulo = Math.random()*2*Math.PI;
+        const dist = 70 + Math.random()*100;
+        s.style.setProperty('--tx', Math.cos(angulo)*dist + 'px');
+        s.style.setProperty('--ty', Math.sin(angulo)*dist + 'px');
+        s.style.setProperty('--r', (Math.random()*360-180) + 'deg');
+        s.style.left = '50%';
+        s.style.top = '46%';
+        s.style.fontSize = (0.9 + Math.random()*0.8) + 'rem';
+        s.style.animationDelay = (Math.random()*0.15) + 's';
+        contenedor.appendChild(s);
+        setTimeout(() => s.remove(), 1500);
+      }
+    }
+
+    document.addEventListener('obertislide', function(e){
+      const { idx, total } = e.detail;
+      if(idx === total - 1){
+        if(!explotado){ explotado = true; estallarConfeti(); }
+      } else {
+        explotado = false;
+      }
+    });
+  })();
+</script>
+</body>
+</html>
