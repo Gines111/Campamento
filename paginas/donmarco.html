@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Don Marco · Oberti</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="persona.css">
+<style>
+  body{
+    background:
+      radial-gradient(1.5px 1.5px at 15% 20%, rgba(255,255,255,.9), transparent),
+      radial-gradient(1.5px 1.5px at 75% 15%, rgba(255,255,255,.7), transparent),
+      radial-gradient(2px 2px at 40% 30%, rgba(255,255,255,.8), transparent),
+      radial-gradient(1px 1px at 85% 45%, rgba(255,255,255,.6), transparent),
+      radial-gradient(1.5px 1.5px at 25% 60%, rgba(255,255,255,.7), transparent),
+      radial-gradient(2px 2px at 65% 70%, rgba(255,255,255,.9), transparent),
+      radial-gradient(1px 1px at 10% 80%, rgba(255,255,255,.6), transparent),
+      radial-gradient(1.5px 1.5px at 90% 85%, rgba(255,255,255,.7), transparent),
+      linear-gradient(160deg, #0A2233 0%, #0E3A4A 55%, #123F4C 100%);
+  }
+
+  @keyframes titilar{
+    0%,100%{ opacity:1; transform:scale(1); }
+    50%{ opacity:.75; transform:scale(1.05); }
+  }
+  .medalla{
+    background:linear-gradient(135deg, #1c4d5c, #0a2233);
+    animation:titilar 2.8s ease-in-out infinite;
+  }
+
+  .eyebrow, .pista-deslizar{ color:var(--pool-deep); }
+
+  .particula{ animation-duration:7s; }
+  .particula:nth-child(1){ left:8%;  animation-delay:0s;   font-size:1rem; }
+  .particula:nth-child(2){ left:24%; animation-delay:2s;   font-size:.85rem; }
+  .particula:nth-child(3){ left:40%; animation-delay:1s;   font-size:1.1rem; }
+  .particula:nth-child(4){ left:56%; animation-delay:3s;   font-size:.9rem; }
+  .particula:nth-child(5){ left:72%; animation-delay:1.6s; font-size:1rem; }
+  .particula:nth-child(6){ left:88%; animation-delay:2.6s; font-size:.85rem; }
+  .particula:nth-child(7){ left:50%; animation-delay:3.8s; font-size:1rem; }
+</style>
+</head>
+<body>
+
+<div class="diploma">
+  <div class="particulas" aria-hidden="true">
+    <span class="particula">✨</span>
+    <span class="particula">🌟</span>
+    <span class="particula">✨</span>
+    <span class="particula">🌌</span>
+    <span class="particula">✨</span>
+    <span class="particula">🌟</span>
+    <span class="particula">✨</span>
+  </div>
+
+  <span class="washi izq"></span>
+  <span class="washi der"></span>
+
+  <p class="pista-deslizar" id="pistaDeslizar"><span class="icono">👉</span> toca o desliza para leer</p>
+  <div class="progreso" id="progreso"></div>
+
+  <div class="carrusel-viewport">
+    <div class="carrusel">
+      <div class="slide">
+        <div class="medalla">🌌</div>
+        <p class="eyebrow">Oberti · Campamento 2026</p>
+        <h1 class="display">Gracias, Don Marco</h1>
+      </div>
+      <div class="slide">
+        <p class="mensaje">Gracias de corazón. Un gracias sincero, un gracias de verdad por haber aparecido en mi vida. Durante todo el año me hablaban de ti y siempre era bueno lo que escuchaba, pero no había tenido el gusto hasta ahora.</p>
+      </div>
+      <div class="slide">
+        <p class="mensaje">Lo mejor de todo ha sido conocerte en un campamento, haciendo lo que mejor sabes hacer: estar con los niños. Ayer, en la Noche de las Estrellas, nos regalaste un momento de paz, tranquilidad y reflexión.</p>
+      </div>
+      <div class="slide">
+        <p class="mensaje">Era un momento que necesitaba en lo personal. Con todo lo que he hecho este verano, no había tenido un rato para pensar como pensé ayer. Así que una y mil veces más: muchas gracias.</p>
+      </div>
+      <div class="slide">
+        <p class="mensaje">Espero compartir muchas más aventuras a tu lado, porque sé de sobra que cualquier cosa en la que cuente contigo al mando, o en el mando, es una aventura espectacular.</p>
+      </div>
+      <div class="slide">
+        <p class="firma display">Con cariño, Ginés</p>
+        <a class="volver" href="../index.html">&larr; volver al pase de voluntario</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-botones">
+    <button type="button" class="nav-btn nav-prev" data-oculto="1" aria-label="Anterior">&lsaquo;</button>
+    <button type="button" class="nav-btn nav-next" aria-label="Siguiente">&rsaquo;</button>
+  </div>
+</div>
+
+<div class="olas" aria-hidden="true">
+  <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+    <path d="M0,40 C150,90 350,0 600,40 C850,80 1050,10 1200,50 L1200,120 L0,120 Z" fill="#0E6E7C" opacity="0.3"/>
+    <path d="M0,70 C200,20 400,100 650,60 C900,20 1050,90 1200,70 L1200,120 L0,120 Z" fill="#0E6E7C" opacity="0.45"/>
+  </svg>
+</div>
+
+<script src="persona.js"></script>
+</body>
+</html>
