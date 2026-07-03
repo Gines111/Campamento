@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Jose Manuel · Proyecto Oberti</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="persona.css">
+<style>
+  @keyframes rebote{
+    0%,100%{ transform:translateY(0) rotate(-4deg); }
+    50%{ transform:translateY(-6px) rotate(4deg); }
+  }
+  .medalla{ animation:rebote 1.4s ease-in-out infinite; }
+  .particula{ animation-duration: 5s; }
+  .particula:nth-child(1){ left:6%;  animation-delay:0s;   font-size:1.2rem; }
+  .particula:nth-child(2){ left:20%; animation-delay:1.4s; font-size:1.5rem; }
+  .particula:nth-child(3){ left:36%; animation-delay:.6s;  font-size:1rem; }
+  .particula:nth-child(4){ left:52%; animation-delay:2.2s; font-size:1.3rem; }
+  .particula:nth-child(5){ left:68%; animation-delay:1s;   font-size:1.1rem; }
+  .particula:nth-child(6){ left:82%; animation-delay:1.8s; font-size:1.4rem; }
+  .particula:nth-child(7){ left:44%; animation-delay:2.8s; font-size:1rem; }
+</style>
+</head>
+<body>
+
+<div class="diploma">
+  <div class="particulas" aria-hidden="true">
+    <span class="particula">😂</span>
+    <span class="particula">🎉</span>
+    <span class="particula">✨</span>
+    <span class="particula">😂</span>
+    <span class="particula">🎉</span>
+    <span class="particula">✨</span>
+    <span class="particula">😂</span>
+  </div>
+
+  <div class="medalla">🌟</div>
+  <p class="eyebrow">Proyecto Oberti · Campamento 2026</p>
+  <h1 class="display">Gracias, Jose Manuel</h1>
+
+  <p class="mensaje">Este campamento estás mostrando facetas tuyas que entre las paredes de una clase nunca se habían podido ver del todo: esa vibra espectacular, ese punto gracioso y esa forma tan tuya de hablar que engancha a cualquiera.</p>
+  <p class="mensaje">Estás demostrando que no basta con que te gusten los niños. Hace falta tener la gracia de hacerles reír, la paciencia de estar ahí de verdad y, sobre todo, unas ganas de ir con ellos hasta el fin del mundo.</p>
+  <p class="mensaje">Gracias por traer esa energía cada día. Oberti es mejor contigo dentro y el tiempo aquí lo demuestra.</p>
+
+  <p class="firma display">Con cariño, Ginés</p>
+  <a class="volver" href="../index.html">&larr; volver al pase de voluntario</a>
+</div>
+
+<div class="olas" aria-hidden="true">
+  <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+    <path d="M0,40 C150,90 350,0 600,40 C850,80 1050,10 1200,50 L1200,120 L0,120 Z" fill="#0E6E7C" opacity="0.18"/>
+    <path d="M0,70 C200,20 400,100 650,60 C900,20 1050,90 1200,70 L1200,120 L0,120 Z" fill="#0E6E7C" opacity="0.28"/>
+  </svg>
+</div>
+
+</body>
+</html>

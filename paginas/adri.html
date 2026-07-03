@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Adri · Proyecto Oberti</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="persona.css">
+<style>
+  .medalla{ animation:balanceoBarco 2.8s ease-in-out infinite; }
+  .particula{ animation-duration: 6s; }
+  .particula:nth-child(1){ left:8%;  animation-delay:0s;   font-size:1.2rem; }
+  .particula:nth-child(2){ left:24%; animation-delay:1.8s; font-size:1rem; }
+  .particula:nth-child(3){ left:40%; animation-delay:.9s;  font-size:1.4rem; }
+  .particula:nth-child(4){ left:56%; animation-delay:2.6s; font-size:1.1rem; }
+  .particula:nth-child(5){ left:72%; animation-delay:1.3s; font-size:1.3rem; }
+  .particula:nth-child(6){ left:88%; animation-delay:2s;   font-size:1rem; }
+  .particula:nth-child(7){ left:50%; animation-delay:3.4s; font-size:1.2rem; }
+
+  .timon{
+    position:relative;
+    z-index:1;
+    display:inline-block;
+    margin-bottom:6px;
+    font-size:1.1rem;
+    animation:girarSuave 8s linear infinite;
+  }
+</style>
+</head>
+<body>
+
+<div class="diploma">
+  <div class="particulas" aria-hidden="true">
+    <span class="particula">⚓</span>
+    <span class="particula">🌊</span>
+    <span class="particula">⭐</span>
+    <span class="particula">⚓</span>
+    <span class="particula">🌊</span>
+    <span class="particula">⭐</span>
+    <span class="particula">🌊</span>
+  </div>
+
+  <div class="medalla">⛵</div>
+  <p class="eyebrow">Proyecto Oberti · Verano 2026</p>
+  <h1 class="display">Gracias, Adri</h1>
+
+  <p class="mensaje">Eres el número uno. El incansable, el que rema sin parar, el que sostiene el barco cuando más falta hace. El capitán de esta familia que es el Oberti.</p>
+  <p class="mensaje">Nos faltan palabras para decirte todo el cariño, el agrado y la fascinación que nos generas. Lo tuyo es esto, y lo demuestras y lo vives en cada cosa que haces, en cada pensamiento, con ese encanto y esa alegría pensando siempre en cada niño. No por quedar bien, sino porque te sale así de servicial y bueno.</p>
+  <p class="mensaje">Hablando en nombre de todo el equipo: eres lo mejor que le podía pasar a este proyecto, y lo mejor para darnos la fuerza que a veces nos ha faltado. Eres el motor del campamento. Hace falta más gente que ayude a mover las ideas, pero sin ti esto no funciona.</p>
+
+  <p class="firma display">Con cariño, Ginés</p>
+  <a class="volver" href="../index.html">&larr; volver al pase de voluntario</a>
+</div>
+
+<div class="olas" aria-hidden="true">
+  <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+    <path d="M0,40 C150,90 350,0 600,40 C850,80 1050,10 1200,50 L1200,120 L0,120 Z" fill="#0E6E7C" opacity="0.28"/>
+    <path d="M0,70 C200,20 400,100 650,60 C900,20 1050,90 1200,70 L1200,120 L0,120 Z" fill="#0E6E7C" opacity="0.4"/>
+  </svg>
+</div>
+
+</body>
+</html>

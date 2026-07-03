@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proyecto Oberti · Verano 2026</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  body{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:100vh;
+    padding:18px 14px;
+    overflow-x:hidden;
+  }
+
+  .escenario{
+    position:relative;
+    z-index:1;
+    width:100%;
+    max-width:400px;
+    text-align:center;
+    animation:apareceArriba .6s ease both;
+  }
+
+  .eyebrow{
+    font-size:.74rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--pool-deep);
+    font-weight:600;
+    margin:0 0 8px;
+  }
+
+  h1{
+    font-family:'Baloo 2', sans-serif;
+    font-weight:800;
+    font-size:clamp(1.7rem, 9vw, 2.9rem);
+    line-height:1.08;
+    margin:0 0 6px;
+    color:var(--pool-deep);
+  }
+
+  .sub{
+    margin:0 0 26px;
+    color:#3c5a61;
+    font-size:.94rem;
+  }
+
+  /* carnet / pase de voluntario */
+  .carnet{
+    position:relative;
+    background:var(--paper);
+    border-radius:20px;
+    box-shadow:0 24px 50px -20px rgba(10,74,84,.35);
+    padding:26px 20px 24px;
+    transform:rotate(-0.8deg);
+  }
+
+  @media (min-width:600px){
+    .escenario{ max-width:560px; }
+    .sub{ font-size:1.02rem; margin-bottom:34px; }
+    .carnet{ border-radius:22px; padding:34px 30px 28px; transform:rotate(-1.2deg); }
+  }
+
+  .carnet::before{
+    content:"";
+    position:absolute;
+    inset:10px;
+    border:2px dashed rgba(14,110,124,.25);
+    border-radius:14px;
+    pointer-events:none;
+  }
+
+  .sello{
+    position:absolute;
+    top:-14px;
+    right:16px;
+    background:var(--coral);
+    color:var(--paper);
+    font-family:'Baloo 2', sans-serif;
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.05em;
+    padding:6px 12px;
+    border-radius:999px;
+    transform:rotate(6deg);
+    box-shadow:0 6px 14px -6px rgba(255,107,84,.6);
+    animation:flotar 3.4s ease-in-out infinite;
+  }
+
+  label{
+    display:block;
+    font-family:'Baloo 2', sans-serif;
+    font-weight:700;
+    font-size:.94rem;
+    color:var(--pool-deep);
+    margin-bottom:10px;
+  }
+
+  form{ position:relative; z-index:1; }
+
+  input[type="text"]{
+    width:100%;
+    font-family:'Baloo 2', sans-serif;
+    font-weight:600;
+    font-size:1.3rem;
+    text-align:center;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+    padding:15px 14px;
+    border:2.5px solid var(--pool);
+    border-radius:14px;
+    background:#fff;
+    color:var(--ink);
+    outline-offset:3px;
+  }
+  input[type="text"]:focus{
+    outline:3px solid var(--sun);
+    border-color:var(--pool-deep);
+  }
+  input[type="text"]::placeholder{
+    font-weight:500;
+    color:#9db3b5;
+    font-size:.95rem;
+    text-transform:none;
+  }
+
+  .pista{
+    margin:10px 0 0;
+    font-size:.8rem;
+    color:#4d6a70;
+    min-height:1.3em;
+  }
+  .pista.error{ color:var(--coral); font-weight:600; }
+
+  button{
+    margin-top:18px;
+    width:100%;
+    font-family:'Baloo 2', sans-serif;
+    font-weight:700;
+    font-size:1.05rem;
+    letter-spacing:.02em;
+    padding:14px;
+    border:none;
+    border-radius:14px;
+    background:var(--pool-deep);
+    color:#fff;
+    cursor:pointer;
+    transition:transform .15s ease, background .15s ease;
+  }
+  button:hover{ background:var(--pool); transform:translateY(-2px); }
+  button:active{ transform:translateY(0) scale(.97); }
+
+  .pie{
+    margin-top:22px;
+    font-size:.74rem;
+    color:#6b8388;
+  }
+
+  @media (min-width:600px){
+    .sello{ top:-16px; right:22px; font-size:.72rem; padding:8px 14px; }
+    label{ font-size:1rem; margin-bottom:12px; }
+    input[type="text"]{ font-size:1.5rem; padding:18px 16px; }
+    .pie{ font-size:.78rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="escenario">
+  <p class="eyebrow">Proyecto Oberti</p>
+  <h1 class="display">Pase de voluntario</h1>
+  <p class="sub">Introduce tu código secreto para recoger tu recuerdo del verano</p>
+
+  <div class="carnet">
+    <span class="sello display">Verano 2026</span>
+    <form id="formPase" autocomplete="off">
+      <label for="clave">Tu código de acceso</label>
+      <input type="text" id="clave" name="clave" placeholder="ej. J3L" autofocus inputmode="text" maxlength="6">
+      <p class="pista" id="pista"></p>
+      <button type="submit">Entrar</button>
+    </form>
+  </div>
+
+  <p class="pie">Un regalito de Ginés para todo el equipo · con cariño de piscina y gymkhana</p>
+</div>
+
+<div class="olas" aria-hidden="true">
+  <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+    <path d="M0,40 C150,90 350,0 600,40 C850,80 1050,10 1200,50 L1200,120 L0,120 Z" fill="#0E6E7C" opacity="0.18"/>
+    <path d="M0,70 C200,20 400,100 650,60 C900,20 1050,90 1200,70 L1200,120 L0,120 Z" fill="#0E6E7C" opacity="0.28"/>
+  </svg>
+</div>
+
+<script>
+  // código de acceso (primera letra + número + última letra) -> página personalizada
+  const paginas = {
+    "j3l": "paginas/josemanuel.html",
+    "a7i": "paginas/adri.html",
+    "h2o": "paginas/hugo.html",
+    "m9l": "paginas/manuel.html",
+    "c4a": "paginas/claudia.html",
+    "s5a": "paginas/sara.html",
+    "b6e": "paginas/beatrice.html",
+    "m1m": "paginas/mariam.html",
+    "a8s": "paginas/andres.html",
+    "d6o": "paginas/donmarco.html",
+    "c2o": "paginas/conso.html"
+  };
+
+  function normaliza(s){
+    return s.trim().toLowerCase().replace(/\s+/g, "");
+  }
+
+  const form = document.getElementById('formPase');
+  const input = document.getElementById('clave');
+  const pista = document.getElementById('pista');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    const valor = normaliza(input.value);
+    const destino = paginas[valor];
+
+    if(destino){
+      pista.classList.remove('error');
+      pista.textContent = "";
+      window.location.href = destino;
+    } else {
+      pista.classList.add('error');
+      pista.textContent = "Ese código no abre ninguna puerta del campamento... ¡revísalo!";
+      input.select();
+    }
+  });
+</script>
+
+</body>
+</html>
